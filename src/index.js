@@ -8,7 +8,6 @@ import YTSearch from 'youtube-api-search';
 import { PouchDB } from "react-pouchdb";
 
 
-const API_KEY = 'AIzaSyDvPvEioXKpKXQf48rA0o6H-RNiYIhzywE';
 
 // Create a new component. This component should produce some HTML
 // const is a ES6 concept declaring a constant variable
