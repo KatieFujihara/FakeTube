@@ -30,7 +30,6 @@ class SearchBar extends Component {
       var newTerm = {term}.title
       console.log(newTerm)
       var db = new PouchDB ("dbnames")
-      var remoteCouch = 'https://99e9c054-9eea-484d-92eb-f55313bd8b5a-bluemix	.cloudant.com/simplestarter/';
 
     
           var newSearch = {
