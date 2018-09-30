@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'lodash';
 import SearchBar from './components/search_bar';
-import VideoList from './components/video_list'
-import VideoDetail from './components/video_detail'
+import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
 import YTSearch from 'youtube-api-search';
+import { PouchDB } from "react-pouchdb";
+
 
 const API_KEY = 'AIzaSyDvPvEioXKpKXQf48rA0o6H-RNiYIhzywE';
 
 // Create a new component. This component should produce some HTML
 // const is a ES6 concept declaring a constant variable
 // JSX is a subset of JavaScript (looks like HTML but it's actually JavaScript)
+
 
 class App extends Component {
   constructor(props) {
@@ -21,16 +24,15 @@ class App extends Component {
       selectedVideo: null
     };
     this.videoSearch('surfboards');
-  }
-    videoSearch(term){
+  };
+  videoSearch(term) {
     YTSearch({key: API_KEY, term: term}, (videos) => {
       this.setState({
         videos : videos,
         selectedVideo: videos[0]
-       });
-      // this.setState({ videos: videos});
+      })
     });
-  }
+  };
 
   render() {
     const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
